@@ -10,8 +10,6 @@ def solveNeuron(input_file, output_file):
     width = int(sizes[0])
     height = int(sizes[1])
     frames = int(sizes[2])
-
-    video_size = (frames, width, height)
     video = []
 
     # Generate numpy matrixes
@@ -20,9 +18,10 @@ def solveNeuron(input_file, output_file):
     for frame in tqdm(range(frames)):
         matrix = []
         for _ in range(height):
-            row = [int(i) for i in input_f.readline().rsplit(' ')]
+            row = input_f.readline().rsplit(' ')
             matrix.append(row)
         my_frame = np.matrix(matrix)
+        my_frame = my_frame.astype(int)
         video.append(my_frame)
 
     # Get max value
