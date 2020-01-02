@@ -81,7 +81,7 @@ def generateVideo(n_frames, frame_size):
 
 
 #
-sizes = [(5, 600), (7, 600), (20, 600), (150, 600), (500, 600)]
+sizes = [(5, 600), (7, 600), (20, 600), (150, 600), (200, 600)]
 
 for i, size in enumerate(tqdm(sizes)):
     out = open('input%i.txt' % i, 'w+')
